@@ -4,11 +4,14 @@ val AkkaVersion = "2.6.15"
 val JacksonVersion = "2.11.4"
 val TwitterLibVersion = "21.9.0"
 val ThriftVersion = "0.10.0"
+
 /**
  * Starting external dep version declaration section
  * Example: val SomeExternalDepVersion = "0.0.0"
  */
+
 // TODO: Add external dep versions
+
 /**
  * Ending external dep version declaration section
  */
@@ -41,7 +44,9 @@ val Finagle = Seq(
  * Starting external dep declaration section
  * Example: val SomeExternalDep = "some.domain" % "some-external-dep" % SomeExternalDepVersion
  */
+
 // TODO: Add external deps
+
 /**
  * Ending external dep declaration section
  */
@@ -52,7 +57,9 @@ val thriftIDLDependencies = library("thrift-idl")
    * Starting external dep libraryDependencies declaration section
    * Example: .settings(libraryDependencies ++= Seq(SomeExternalDep))
    */
+
   // TODO: Add to libraryDependencies
+
   /**
    * Ending external dep declaration section
    */
@@ -67,7 +74,9 @@ val thriftIDLDependencies = library("thrift-idl")
    * Starting scroogeThriftDependencies declaration section
    * Example: .settings(Compile / scroogeThriftDependencies := Seq("some-spec-idl"))
    */
+
   // TODO: Add to scroogeThriftDependencies
+
   /**
    * Ending scroogeThriftDependencies declaration section
    */

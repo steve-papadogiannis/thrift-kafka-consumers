@@ -21,6 +21,18 @@ object ProjectSettings {
     Global / cancelable := true,
     resolvers ++= Seq(
       Resolver.mavenLocal,
+
+      /**
+       * Starting external dep resolvers declaration section
+       * Example: ("Repo" at "http://repo.com").withAllowInsecureProtocol(true)
+       */
+
+      // TODO: Add any necessary dep resolver
+
+      /**
+       * Ending external dep resolvers declaration section
+       */
+
       "Typesafe repository" at "https://repo.typesafe.com/typesafe/releases",
       "Sonatype releases" at "https://oss.sonatype.org/content/repositories/releases"
     )
