@@ -4,3 +4,6 @@
 
 # Sbt
 target/
+
+# Logs
+logs/

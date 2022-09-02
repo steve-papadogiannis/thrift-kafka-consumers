@@ -34,10 +34,9 @@ abstract class ThriftKafkaConsumer[T <: ThriftStruct](codec: ThriftStructCodec[T
   def handleMsg(msg: ConsumerMessage.CommittableMessage[String, T]) = {
     Future {
       if (filter(msg.record.value())) {
-        println("\n********************************************************************************")
-        println(s"Key: ${msg.record.key()}")
-        println(s"Type: ${extractType(msg.record.value())}")
-        println(s"Msg: $msg")
+        system.log.info(s"""Key: ${msg.record.key()}
+             |Type: ${extractType(msg.record.value())}
+             |Msg: $msg""".stripMargin)
       }
       Done
     }

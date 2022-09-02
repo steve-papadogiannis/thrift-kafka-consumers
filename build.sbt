@@ -1,9 +1,11 @@
 import ProjectSettings.{library, root}
 
 val AkkaVersion = "2.6.15"
+val AkkaStreamKafkaVersion = "2.1.1"
 val JacksonVersion = "2.11.4"
 val TwitterLibVersion = "21.9.0"
 val ThriftVersion = "0.10.0"
+val LogbackVersion = "1.2.11"
 
 /**
  * Starting external dep version declaration section
@@ -16,11 +18,11 @@ val ThriftVersion = "0.10.0"
  * Ending external dep version declaration section
  */
 
-val AkkaKafkaStreams = "com.typesafe.akka" %% "akka-stream-kafka" % "2.1.1"
+val AkkaKafkaStreams = "com.typesafe.akka" %% "akka-stream-kafka" % AkkaStreamKafkaVersion
 val AkkaStreams = "com.typesafe.akka" %% "akka-stream" % AkkaVersion
+val AkkaSlf4j = "com.typesafe.akka" %% "akka-slf4j" % AkkaVersion
 val JacksonDatabind = "com.fasterxml.jackson.core" % "jackson-databind" % JacksonVersion
-val Slf4jApi = "org.slf4j" % "slf4j-api" % "1.7.32"
-val Slf4jSimple = "org.slf4j" % "slf4j-simple" % "1.7.32"
+val Logback = "ch.qos.logback" % "logback-classic" % LogbackVersion
 
 val Thrift = "org.apache.thrift" % "libthrift" % ThriftVersion excludeAll(
   ExclusionRule("org.apache.httpcomponents", "httpclient"),
@@ -95,4 +97,4 @@ val thriftDependencies = library("thrift")
 val thriftKafkaConsumers = root()
   .dependsOn(thriftDependencies)
   .aggregate(thriftDependencies)
-  .settings(libraryDependencies ++= Seq(AkkaKafkaStreams, AkkaStreams, JacksonDatabind, Thrift, Slf4jApi, Slf4jSimple) ++ Scrooge)
+  .settings(libraryDependencies ++= Seq(AkkaKafkaStreams, AkkaStreams, AkkaSlf4j, JacksonDatabind, Thrift, Logback) ++ Scrooge)
