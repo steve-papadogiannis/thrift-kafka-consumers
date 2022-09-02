@@ -27,7 +27,7 @@ abstract class ThriftKafkaConsumer[T <: ThriftStruct](codec: ThriftStructCodec[T
 
   val committerSettings = CommitterSettings(system)
 
-  def extractEventType(t: T): String
+  def extractType(t: T): String
 
   def filter(t: T): Boolean = true
 
@@ -36,7 +36,7 @@ abstract class ThriftKafkaConsumer[T <: ThriftStruct](codec: ThriftStructCodec[T
       if (filter(msg.record.value())) {
         println("\n********************************************************************************")
         println(s"Key: ${msg.record.key()}")
-        println(s"EventType: ${extractEventType(msg.record.value())}")
+        println(s"Type: ${extractType(msg.record.value())}")
         println(s"Msg: $msg")
       }
       Done
