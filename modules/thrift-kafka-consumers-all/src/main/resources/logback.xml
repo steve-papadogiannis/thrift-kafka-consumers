@@ -4,7 +4,7 @@
     <appender name="FILE-ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>logs/archive.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-            <fileNamePattern>logs/messages.%i.log.zip</fileNamePattern>
+            <fileNamePattern>logs/archive.%i.log.zip</fileNamePattern>
             <minIndex>1</minIndex>
             <maxIndex>5</maxIndex>
         </rollingPolicy>
